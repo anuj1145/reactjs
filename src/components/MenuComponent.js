@@ -100,7 +100,7 @@ const MenuComponent = () => {
     const fetchMenus = async () => {
       try {
         const response = await fetch(
-          "http://menu-system.infinityfreeapp.com/api/menus"
+          "https://menu-system.infinityfreeapp.com/api/menus"
         );
         const data = await response.json();
         setMenus(data);
@@ -115,7 +115,7 @@ const MenuComponent = () => {
     const fetchMenuItems = async () => {
       try {
         const response = await fetch(
-          "http://menu-system.infinityfreeapp.com/api/submenus"
+          "https://menu-system.infinityfreeapp.com/api/submenus"
         );
         const data = await response.json();
         setMenuItems(data);
@@ -128,7 +128,7 @@ const MenuComponent = () => {
 
   //   // Handle deleting a menu item
   const handleDeleteItem = (id) => {
-    fetch(`http://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
+    fetch(`https://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -144,7 +144,7 @@ const MenuComponent = () => {
 
   // Handle editing a menu item
   const handleEditItem = (id, newTitle) => {
-    fetch(`http://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
+    fetch(`https://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -191,7 +191,7 @@ const MenuComponent = () => {
 
     if (!menuId) {
       let name = title;
-      fetch("http://menu-system.infinityfreeapp.com/api/menus", {
+      fetch("https://menu-system.infinityfreeapp.com/api/menus", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -208,7 +208,7 @@ const MenuComponent = () => {
         })
         .catch((error) => alert(error));
     } else {
-      fetch("http://menu-system.infinityfreeapp.com/api/menu-items", {
+      fetch("https://menu-system.infinityfreeapp.com/api/menu-items", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
