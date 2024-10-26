@@ -51,8 +51,8 @@ const StatusBar = () => {
   <span className="px-0.5 md:hidden">{time}</span>
   <div className="flex items-center mr-16 md:hidden">
   <span className="px-1">{networkStatus}</span> 
-  <span className="px-1">🔋 {batteryLevel}%</span>
-  <span className="px-1">📶 </span>
+  <span role="img" aria-label="Battery level" className="px-1">🔋 {batteryLevel}%</span>
+  <span role="img" aria-label="Signal strength" className="px-1">📶 {signalStrength}</span>
 </div>
 
 </div>
