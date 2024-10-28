@@ -100,7 +100,6 @@ const MenuComponent = () => {
     const fetchMenus = async () => {
       try {
         const response = await fetch("https://menu-system.infinityfreeapp.com/api/menus", {
-          mode: 'cors'
         });
         const data = await response.json();
         setMenus(data);
