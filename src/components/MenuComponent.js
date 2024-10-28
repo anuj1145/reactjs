@@ -99,7 +99,7 @@ const MenuComponent = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("https://menu-system.infinityfreeapp.com/api/menus", {
+        const response = await fetch("/api/menus", {
         });
         const data = await response.json();
         setMenus(data);
@@ -114,7 +114,7 @@ const MenuComponent = () => {
     const fetchMenuItems = async () => {
       try {
         const response = await fetch(
-          "https://menu-system.infinityfreeapp.com/api/submenus"
+          "/api/submenus"
         );
         const data = await response.json();
         setMenuItems(data);
@@ -127,7 +127,7 @@ const MenuComponent = () => {
 
   //   // Handle deleting a menu item
   const handleDeleteItem = (id) => {
-    fetch(`https://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
+    fetch(`/api/menu-items/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -143,7 +143,7 @@ const MenuComponent = () => {
 
   // Handle editing a menu item
   const handleEditItem = (id, newTitle) => {
-    fetch(`https://menu-system.infinityfreeapp.com/api/menu-items/${id}`, {
+    fetch(`/api/menu-items/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -190,7 +190,7 @@ const MenuComponent = () => {
 
     if (!menuId) {
       let name = title;
-      fetch("https://menu-system.infinityfreeapp.com/api/menus", {
+      fetch("/api/menus", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -207,7 +207,7 @@ const MenuComponent = () => {
         })
         .catch((error) => alert(error));
     } else {
-      fetch("https://menu-system.infinityfreeapp.com/api/menu-items", {
+      fetch("/api/menu-items", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
