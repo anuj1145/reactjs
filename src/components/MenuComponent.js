@@ -99,8 +99,7 @@ const MenuComponent = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       try {
-        const response = await fetch("/api/menus", {
-        });
+         const response = await fetch("/api/menus");
         const data = await response.json();
         setMenus(data);
       } catch (error) {
@@ -113,9 +112,7 @@ const MenuComponent = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch(
-          "/api/submenus"
-        );
+        const response = await fetch("/api/submenus");
         const data = await response.json();
         setMenuItems(data);
       } catch (error) {
